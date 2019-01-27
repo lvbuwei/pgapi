@@ -1,0 +1,8 @@
+HTTP_INCS="$HTTP_INCS /usr/local/pg11/include /home/lhq/nginx-1.15.8/src/http"
+CORE_LIBS="$CORE_LIBS -L/usr/local/pg11/lib -lpq -lcjson"
+#ngx_module_libs="-lpq"
+ngx_module_type=HTTP
+ngx_module_name=ngx_http_pgapi_module
+ngx_module_srcs="$ngx_addon_dir/ngx_http_pgapi_module.c"
+. auto/module
+ngx_addon_name=$ngx_module_name
